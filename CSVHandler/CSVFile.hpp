@@ -19,23 +19,47 @@
 class CSVFile
 {
     public:
+        /**
+         * @brief Construct a new CSVFile object
+         * 
+         * @param file_name path to the file that will be open
+         * @param num_columns number of columns of the file
+         */
         CSVFile(const char* file_name, size_t num_columns);
+        /**
+         * @brief Destroy the CSVFile object
+         * 
+         */
         ~CSVFile();
+        void to_binary();
     protected:
+        /**
+         * @brief number of columns
+         * 
+         */
         size_t num_columns;
-        char file_name[50];
+        /**
+         * @brief path to the file that will be open
+         * 
+         */
+        std::string file_name;
     private:
 };
 
 CSVFile::CSVFile(const char* file_name, size_t num_columns)
 {
-    strcpy(this->file_name, file_name);
+    this->file_name = file_name;
     this->num_columns = num_columns;
 }
 
 CSVFile::~CSVFile()
 {
     
+}
+
+void CSVFile::to_binary()
+{
+    std::ifstream binary_file(this->file_name, std::ios::binary);
 }
 
 #endif /* C3ABA26E_F0DD_4CB4_9CF5_BAFC7D93CA94 */

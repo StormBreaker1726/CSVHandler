@@ -59,6 +59,8 @@ bool read()
     }
     std::cout<<"\n\n\n"<<std::endl;
 
+    csv_test_reader.close();
+
     return true;
 }
 

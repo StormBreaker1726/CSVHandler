@@ -59,6 +59,8 @@ bool read()
     }
     std::cout<<"\n\n\n"<<std::endl;
 
+    csv_test_reader.close();
+
     if(reader_return.size() == 0)
     {
         return false;
@@ -80,6 +82,8 @@ bool read_row(int row_to_read)
         std::cout<<row.at(i)<<", ";
     }
     std::cout<<std::endl;
+
+    csv_test_reader.close();
 
     if(row.size() == 0)
     {
